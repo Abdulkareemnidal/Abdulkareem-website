@@ -11,8 +11,15 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
 
+    <!-- Google Tag Manager -->
+    <script async src="https://www.googletagmanager.com/gtm.js?id=GTM-N2N7ZQVB"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+    </script>
+
     <style>
-        /* ========== المتغيرات (الثيمات) ========== */
         :root, [data-theme="dark"] {
             --bg-color: #0b1120;
             --card-bg: #1e293b;
@@ -26,6 +33,7 @@
             --input-bg: #0f172a;
             --input-border: rgba(255, 255, 255, 0.1);
             --whatsapp-color: #25d366;
+            --success: #10b981;
             --shadow-color: rgba(0, 0, 0, 0.4);
         }
 
@@ -60,12 +68,12 @@
             transition: background-color 0.4s ease, color 0.4s ease;
         }
 
-        /* ========== Navbar ========== */
+        /* ============ Navbar ============ */
         nav {
             position: fixed;
             top: 0;
             width: 100%;
-            padding: 20px 50px;
+            padding: 18px 50px;
             display: flex;
             justify-content: space-between;
             align-items: center;
@@ -73,11 +81,10 @@
             backdrop-filter: blur(10px);
             z-index: 1000;
             border-bottom: 1px solid var(--border-color);
-            transition: background-color 0.4s ease;
         }
 
         .logo {
-            font-size: 24px;
+            font-size: 22px;
             font-weight: 800;
             background: var(--gradient);
             -webkit-background-clip: text;
@@ -86,7 +93,7 @@
 
         .nav-links {
             display: flex;
-            gap: 30px;
+            gap: 25px;
             list-style: none;
         }
 
@@ -95,6 +102,7 @@
             text-decoration: none;
             font-weight: 500;
             transition: color 0.3s;
+            font-size: 15px;
             position: relative;
         }
 
@@ -109,31 +117,24 @@
             transition: width 0.3s;
         }
 
-        .nav-links a:hover,
-        .nav-links a.active {
-            color: var(--primary);
-        }
-
-        .nav-links a.active::after,
-        .nav-links a:hover::after {
-            width: 100%;
-        }
+        .nav-links a:hover, .nav-links a.active { color: var(--primary); }
+        .nav-links a.active::after, .nav-links a:hover::after { width: 100%; }
 
         .nav-actions {
             display: flex;
             align-items: center;
-            gap: 15px;
+            gap: 12px;
         }
 
         .theme-btn {
             background: var(--card-bg);
             border: 1px solid var(--border-color);
             color: var(--text-main);
-            width: 42px;
-            height: 42px;
+            width: 40px;
+            height: 40px;
             border-radius: 50%;
             cursor: pointer;
-            font-size: 18px;
+            font-size: 16px;
             display: flex;
             align-items: center;
             justify-content: center;
@@ -155,55 +156,85 @@
             cursor: pointer;
         }
 
-        /* ========== Hero ========== */
+        /* ============ Hero ============ */
         .hero {
             min-height: 100vh;
             display: flex;
             align-items: center;
             justify-content: space-between;
-            padding: 100px 10%;
+            padding: 100px 10% 60px;
             gap: 50px;
+            position: relative;
         }
 
         .hero-content { flex: 1; }
 
+        .available-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background: rgba(16, 185, 129, 0.15);
+            color: var(--success);
+            padding: 6px 16px;
+            border-radius: 20px;
+            font-size: 13px;
+            font-weight: 700;
+            margin-bottom: 20px;
+            border: 1px solid rgba(16, 185, 129, 0.3);
+        }
+
+        .available-badge .dot {
+            width: 8px;
+            height: 8px;
+            background: var(--success);
+            border-radius: 50%;
+            animation: pulse-dot 1.5s infinite;
+        }
+
+        @keyframes pulse-dot {
+            0%, 100% { opacity: 1; transform: scale(1); }
+            50% { opacity: 0.5; transform: scale(1.3); }
+        }
+
         .hero-content h3 {
             color: var(--primary);
-            font-size: 24px;
+            font-size: 22px;
             margin-bottom: 10px;
         }
 
         .hero-content h1 {
-            font-size: 56px;
+            font-size: 54px;
             font-weight: 800;
-            margin-bottom: 20px;
+            margin-bottom: 15px;
             line-height: 1.2;
         }
 
         .typing-text {
-            font-size: 28px;
+            font-size: 26px;
             color: var(--text-muted);
-            margin-bottom: 30px;
+            margin-bottom: 25px;
             font-weight: 500;
-            height: 40px;
+            height: 38px;
         }
 
         .hero-content p {
             color: var(--text-muted);
-            font-size: 18px;
-            margin-bottom: 40px;
+            font-size: 17px;
+            margin-bottom: 35px;
             max-width: 600px;
         }
 
         .hero-btns {
             display: flex;
-            gap: 15px;
+            gap: 12px;
             flex-wrap: wrap;
         }
 
         .btn {
-            display: inline-block;
-            padding: 12px 30px;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 12px 28px;
             background: var(--gradient);
             color: #fff;
             text-decoration: none;
@@ -212,7 +243,7 @@
             transition: transform 0.3s, box-shadow 0.3s;
             border: none;
             cursor: pointer;
-            font-size: 16px;
+            font-size: 15px;
         }
 
         .btn:hover {
@@ -221,8 +252,10 @@
         }
 
         .btn-outline {
-            display: inline-block;
-            padding: 12px 30px;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 12px 28px;
             background: transparent;
             color: var(--text-main);
             text-decoration: none;
@@ -231,6 +264,7 @@
             transition: all 0.3s;
             border: 2px solid var(--primary);
             cursor: pointer;
+            font-size: 15px;
         }
 
         .btn-outline:hover {
@@ -261,30 +295,80 @@
             50% { transform: translateY(-20px); }
         }
 
-        /* ========== Sections ========== */
-        section { padding: 100px 10%; }
+        /* ============ Tech Marquee ============ */
+        .tech-marquee {
+            padding: 30px 0;
+            overflow: hidden;
+            background: var(--card-bg);
+            border-top: 1px solid var(--border-color);
+            border-bottom: 1px solid var(--border-color);
+            position: relative;
+        }
+
+        .marquee-track {
+            display: flex;
+            gap: 60px;
+            animation: scroll-marquee 30s linear infinite;
+            width: fit-content;
+        }
+
+        .marquee-track:hover { animation-play-state: paused; }
+
+        .marquee-item {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            font-size: 20px;
+            font-weight: 700;
+            color: var(--text-muted);
+            white-space: nowrap;
+            transition: color 0.3s;
+        }
+
+        .marquee-item:hover { color: var(--primary); }
+
+        .marquee-item i {
+            font-size: 28px;
+            color: var(--primary);
+        }
+
+        @keyframes scroll-marquee {
+            0% { transform: translateX(0); }
+            100% { transform: translateX(50%); }
+        }
+
+        /* ============ Sections ============ */
+        section { padding: 90px 10%; }
 
         .section-title {
             text-align: center;
             font-size: 36px;
             font-weight: 800;
-            margin-bottom: 60px;
+            margin-bottom: 15px;
         }
 
         .section-title span { color: var(--primary); }
 
-        /* ========== Stats ========== */
+        .section-subtitle {
+            text-align: center;
+            color: var(--text-muted);
+            font-size: 16px;
+            margin-bottom: 55px;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        /* ============ Stats ============ */
         .stats-container {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 30px;
-            margin-top: -40px;
-            margin-bottom: 40px;
+            gap: 25px;
         }
 
         .stat-card {
             background: var(--card-bg);
-            padding: 30px;
+            padding: 30px 20px;
             border-radius: 15px;
             text-align: center;
             border: 1px solid var(--border-color);
@@ -297,13 +381,13 @@
         }
 
         .stat-card i {
-            font-size: 40px;
+            font-size: 36px;
             color: var(--primary);
-            margin-bottom: 15px;
+            margin-bottom: 12px;
         }
 
         .stat-card h3 {
-            font-size: 36px;
+            font-size: 34px;
             font-weight: 800;
             background: var(--gradient);
             -webkit-background-clip: text;
@@ -312,25 +396,26 @@
 
         .stat-card p {
             color: var(--text-muted);
-            font-size: 15px;
+            font-size: 14px;
         }
 
-        /* ========== Skills ========== */
+        /* ============ Skills ============ */
         .skills-container {
             display: flex;
             flex-wrap: wrap;
-            gap: 15px;
+            gap: 12px;
             justify-content: center;
         }
 
         .skill-card {
             background: var(--card-bg);
-            padding: 15px 25px;
+            padding: 13px 22px;
             border-radius: 10px;
             display: flex;
             align-items: center;
             gap: 10px;
             font-weight: 500;
+            font-size: 15px;
             border: 1px solid var(--border-color);
             transition: transform 0.3s, border-color 0.3s;
         }
@@ -341,20 +426,20 @@
         }
 
         .skill-card i {
-            font-size: 24px;
+            font-size: 22px;
             color: var(--primary);
         }
 
-        /* ========== Cards (Experience & Projects) ========== */
+        /* ============ Cards ============ */
         .grid-container {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 30px;
+            gap: 25px;
         }
 
         .card {
             background: var(--card-bg);
-            padding: 30px;
+            padding: 28px;
             border-radius: 15px;
             border: 1px solid var(--border-color);
             transition: transform 0.3s, box-shadow 0.3s;
@@ -380,21 +465,21 @@
         }
 
         .card h3 {
-            font-size: 22px;
-            margin-bottom: 10px;
+            font-size: 20px;
+            margin-bottom: 8px;
             color: var(--text-main);
         }
 
         .card h4 {
-            font-size: 16px;
+            font-size: 15px;
             color: var(--primary);
-            margin-bottom: 15px;
+            margin-bottom: 12px;
             font-weight: 500;
         }
 
         .card p {
             color: var(--text-muted);
-            font-size: 15px;
+            font-size: 14px;
             flex-grow: 1;
         }
 
@@ -402,11 +487,11 @@
             display: inline-flex;
             align-items: center;
             gap: 8px;
-            margin-top: 20px;
+            margin-top: 18px;
             color: var(--primary);
             text-decoration: none;
             font-weight: 700;
-            font-size: 15px;
+            font-size: 14px;
             transition: color 0.3s, transform 0.3s;
             width: fit-content;
         }
@@ -416,20 +501,132 @@
             transform: translateX(-5px);
         }
 
-        /* ========== Courses ========== */
+        /* ============ Services ============ */
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 25px;
+        }
+
+        .service-card {
+            background: var(--card-bg);
+            padding: 35px 28px;
+            border-radius: 18px;
+            border: 1px solid var(--border-color);
+            text-align: center;
+            transition: transform 0.3s, border-color 0.3s, box-shadow 0.3s;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .service-card:hover {
+            transform: translateY(-10px);
+            border-color: var(--primary);
+            box-shadow: 0 20px 40px var(--shadow-color);
+        }
+
+        .service-icon {
+            width: 70px;
+            height: 70px;
+            margin: 0 auto 20px;
+            background: var(--gradient);
+            border-radius: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #fff;
+            font-size: 30px;
+            box-shadow: 0 10px 25px rgba(56, 189, 248, 0.3);
+        }
+
+        .service-card h3 {
+            font-size: 20px;
+            margin-bottom: 12px;
+            color: var(--text-main);
+        }
+
+        .service-card p {
+            color: var(--text-muted);
+            font-size: 14px;
+            flex-grow: 1;
+            margin-bottom: 20px;
+        }
+
+        .service-btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            padding: 11px 24px;
+            background: var(--whatsapp-color);
+            color: #fff;
+            text-decoration: none;
+            border-radius: 25px;
+            font-weight: 700;
+            font-size: 14px;
+            transition: all 0.3s;
+            border: none;
+            cursor: pointer;
+        }
+
+        .service-btn:hover {
+            background: #128c7e;
+            transform: translateY(-2px);
+            box-shadow: 0 8px 20px rgba(37, 211, 102, 0.35);
+        }
+
+        /* ============ Why Choose Me ============ */
+        .why-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 25px;
+        }
+
+        .why-card {
+            background: var(--card-bg);
+            padding: 30px 25px;
+            border-radius: 15px;
+            border: 1px solid var(--border-color);
+            transition: transform 0.3s, border-color 0.3s;
+        }
+
+        .why-card:hover {
+            transform: translateY(-8px);
+            border-color: var(--primary);
+        }
+
+        .why-icon {
+            font-size: 34px;
+            color: var(--primary);
+            margin-bottom: 15px;
+        }
+
+        .why-card h3 {
+            font-size: 18px;
+            margin-bottom: 10px;
+            color: var(--text-main);
+        }
+
+        .why-card p {
+            color: var(--text-muted);
+            font-size: 14px;
+            line-height: 1.7;
+        }
+
+        /* ============ Courses ============ */
         .courses-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-            gap: 25px;
+            grid-template-columns: repeat(auto-fit, minmax(310px, 1fr));
+            gap: 22px;
         }
 
         .course-card {
             background: var(--card-bg);
-            padding: 25px;
+            padding: 22px;
             border-radius: 15px;
             border: 1px solid var(--border-color);
             display: flex;
-            gap: 20px;
+            gap: 18px;
             align-items: flex-start;
             transition: transform 0.3s, border-color 0.3s;
         }
@@ -440,27 +637,27 @@
         }
 
         .course-icon {
-            width: 55px;
-            height: 55px;
-            min-width: 55px;
+            width: 50px;
+            height: 50px;
+            min-width: 50px;
             background: var(--gradient);
             border-radius: 12px;
             display: flex;
             align-items: center;
             justify-content: center;
             color: #fff;
-            font-size: 22px;
+            font-size: 20px;
         }
 
         .course-info h3 {
-            font-size: 17px;
-            margin-bottom: 8px;
+            font-size: 16px;
+            margin-bottom: 6px;
             color: var(--text-main);
             line-height: 1.4;
         }
 
         .course-info p {
-            font-size: 14px;
+            font-size: 13px;
             color: var(--text-muted);
         }
 
@@ -471,16 +668,16 @@
             background: rgba(56, 189, 248, 0.15);
             color: var(--primary);
             border-radius: 20px;
-            font-size: 12px;
+            font-size: 11px;
             font-weight: 600;
         }
 
-        /* ========== Contact Form ========== */
+        /* ============ Contact Form ============ */
         .contact-container {
             max-width: 700px;
             margin: 0 auto;
             background: var(--card-bg);
-            padding: 50px 40px;
+            padding: 45px 35px;
             border-radius: 20px;
             border: 1px solid var(--border-color);
             box-shadow: 0 20px 50px var(--shadow-color);
@@ -489,19 +686,16 @@
         .contact-form {
             display: flex;
             flex-direction: column;
-            gap: 20px;
+            gap: 18px;
         }
 
         .form-row {
             display: grid;
             grid-template-columns: 1fr 1fr;
-            gap: 20px;
+            gap: 18px;
         }
 
-        .form-group {
-            display: flex;
-            flex-direction: column;
-        }
+        .form-group { display: flex; flex-direction: column; }
 
         .form-group label {
             font-size: 14px;
@@ -512,7 +706,7 @@
 
         .form-group input,
         .form-group textarea {
-            padding: 14px 18px;
+            padding: 13px 16px;
             background: var(--input-bg);
             border: 2px solid var(--input-border);
             border-radius: 10px;
@@ -531,24 +725,34 @@
 
         .form-group textarea {
             resize: vertical;
-            min-height: 140px;
+            min-height: 130px;
         }
 
         .contact-form .btn {
             align-self: flex-start;
             padding: 14px 40px;
-            font-size: 16px;
-            display: inline-flex;
-            align-items: center;
-            gap: 10px;
+        }
+
+        .response-time {
+            text-align: center;
+            margin-top: 25px;
+            color: var(--text-muted);
+            font-size: 13px;
+        }
+
+        .response-time i {
+            color: var(--success);
+            margin-left: 5px;
         }
 
         .contact-info {
             display: flex;
             justify-content: center;
-            gap: 40px;
-            margin-top: 40px;
+            gap: 35px;
+            margin-top: 35px;
             flex-wrap: wrap;
+            padding-top: 25px;
+            border-top: 1px solid var(--border-color);
         }
 
         .contact-info-item {
@@ -556,12 +760,12 @@
             align-items: center;
             gap: 10px;
             color: var(--text-muted);
-            font-size: 15px;
+            font-size: 14px;
         }
 
         .contact-info-item i {
             color: var(--primary);
-            font-size: 20px;
+            font-size: 18px;
         }
 
         .contact-info-item a {
@@ -570,17 +774,14 @@
             transition: color 0.3s;
         }
 
-        .contact-info-item a:hover {
-            color: var(--primary);
-        }
+        .contact-info-item a:hover { color: var(--primary); }
 
-        /* ========== Footer ========== */
+        /* ============ Footer ============ */
         footer {
             text-align: center;
             padding: 40px;
             background: var(--card-bg);
             border-top: 1px solid var(--border-color);
-            transition: background-color 0.4s ease;
         }
 
         .social-links {
@@ -592,7 +793,7 @@
 
         .social-links a {
             color: var(--text-main);
-            font-size: 24px;
+            font-size: 22px;
             transition: color 0.3s, transform 0.3s;
         }
 
@@ -603,7 +804,7 @@
 
         .social-links a.whatsapp-link:hover { color: var(--whatsapp-color); }
 
-        /* ========== Floating Buttons ========== */
+        /* ============ Floating Buttons ============ */
         .whatsapp-float {
             position: fixed;
             width: 60px;
@@ -665,27 +866,21 @@
             transform: translateY(0);
         }
 
-        .scroll-top:hover { transform: translateY(-5px); }
-
-        /* ========== Responsive ========== */
+        /* ============ Responsive ============ */
         @media (max-width: 991px) {
             .hero {
                 flex-direction: column-reverse;
                 text-align: center;
-                padding-top: 150px;
-                padding-bottom: 60px;
+                padding-top: 130px;
+                padding-bottom: 50px;
             }
             .hero-content p { margin: 0 auto 30px; }
             .hero-btns { justify-content: center; }
-            .hero-image img {
-                width: 280px;
-                height: 280px;
-            }
-            .hero-content h1 { font-size: 40px; }
-            .typing-text { font-size: 22px; }
+            .hero-image img { width: 280px; height: 280px; }
+            .hero-content h1 { font-size: 38px; }
+            .typing-text { font-size: 20px; }
 
             nav { padding: 15px 20px; }
-
             .hamburger { display: block; }
 
             .nav-links {
@@ -708,7 +903,7 @@
 
             .form-row { grid-template-columns: 1fr; }
             .contact-container { padding: 30px 20px; }
-            .contact-info { gap: 20px; flex-direction: column; align-items: center; }
+            .contact-info { gap: 15px; flex-direction: column; align-items: center; }
 
             .whatsapp-float {
                 bottom: 20px;
@@ -723,26 +918,32 @@
                 width: 45px;
                 height: 45px;
             }
-            section { padding: 70px 5%; }
+            section { padding: 60px 5%; }
+            .section-title { font-size: 28px; }
+            .tech-marquee { padding: 20px 0; }
+            .marquee-item { font-size: 16px; }
+            .marquee-item i { font-size: 22px; }
         }
 
         @media (max-width: 480px) {
-            .hero-content h1 { font-size: 32px; }
-            .hero-image img { width: 240px; height: 240px; }
-            .section-title { font-size: 28px; }
+            .hero-content h1 { font-size: 30px; }
+            .hero-image img { width: 220px; height: 220px; }
         }
     </style>
 </head>
 <body>
+    <!-- Google Tag Manager (noscript) -->
+    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-N2N7ZQVB"
+    height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
     <!-- ========== Navbar ========== -->
     <nav>
         <div class="logo">عبد الكريم</div>
         <ul class="nav-links" id="navLinks">
             <li><a href="#home">الرئيسية</a></li>
-            <li><a href="#about">نبذة عني</a></li>
+            <li><a href="#about">نبذة</a></li>
+            <li><a href="#services">الخدمات</a></li>
             <li><a href="#skills">المهارات</a></li>
-            <li><a href="#experience">الخبرات</a></li>
             <li><a href="#projects">المشاريع</a></li>
             <li><a href="#courses">الدورات</a></li>
             <li><a href="#contact">تواصل</a></li>
@@ -760,14 +961,23 @@
     <!-- ========== Hero ========== -->
     <section class="hero" id="home">
         <div class="hero-content" data-aos="fade-left">
+            <div class="available-badge">
+                <span class="dot"></span>
+                متاح للعمل الآن
+            </div>
             <h3>مرحباً، أنا</h3>
             <h1>عبد الكريم عبد القادر</h1>
             <div class="typing-text"><span id="typed"></span></div>
             <p>مطور برمجيات شغوف بابتكار تطبيقات حديثة وسهلة الاستخدام. أساهم في بناء أنظمة مؤسساتية تدعم التحول الرقمي وأحل المشكلات المعقدة بكفاءة عالية.</p>
             <div class="hero-btns">
-                <a href="#contact" class="btn">تواصل معي</a>
+                <a href="#contact" class="btn">
+                    <i class="fa-solid fa-paper-plane"></i> تواصل معي
+                </a>
+                <a href="cv.pdf" download class="btn-outline">
+                    <i class="fa-solid fa-download"></i> تحميل السيرة الذاتية
+                </a>
                 <a href="https://github.com/Abdulkareemnidal" target="_blank" class="btn-outline">
-                    <i class="fa-brands fa-github"></i> حسابي على GitHub
+                    <i class="fa-brands fa-github"></i> GitHub
                 </a>
             </div>
         </div>
@@ -776,8 +986,39 @@
         </div>
     </section>
 
+    <!-- ========== Tech Marquee ========== -->
+    <div class="tech-marquee">
+        <div class="marquee-track">
+            <div class="marquee-item"><i class="fa-brands fa-microsoft"></i> .NET Core</div>
+            <div class="marquee-item"><i class="fa-brands fa-angular"></i> Angular</div>
+            <div class="marquee-item"><i class="fa-solid fa-code"></i> C#</div>
+            <div class="marquee-item"><i class="fa-brands fa-python"></i> Python</div>
+            <div class="marquee-item"><i class="fa-brands fa-java"></i> Java</div>
+            <div class="marquee-item"><i class="fa-solid fa-database"></i> SQL Server</div>
+            <div class="marquee-item"><i class="fa-solid fa-server"></i> PostgreSQL</div>
+            <div class="marquee-item"><i class="fa-brands fa-html5"></i> HTML5</div>
+            <div class="marquee-item"><i class="fa-brands fa-css3-alt"></i> CSS3</div>
+            <div class="marquee-item"><i class="fa-brands fa-js"></i> JavaScript</div>
+            <div class="marquee-item"><i class="fa-brands fa-git-alt"></i> Git</div>
+            <div class="marquee-item"><i class="fa-brands fa-github"></i> GitHub</div>
+            <!-- نسخة مكررة لضمان استمرار الحركة -->
+            <div class="marquee-item"><i class="fa-brands fa-microsoft"></i> .NET Core</div>
+            <div class="marquee-item"><i class="fa-brands fa-angular"></i> Angular</div>
+            <div class="marquee-item"><i class="fa-solid fa-code"></i> C#</div>
+            <div class="marquee-item"><i class="fa-brands fa-python"></i> Python</div>
+            <div class="marquee-item"><i class="fa-brands fa-java"></i> Java</div>
+            <div class="marquee-item"><i class="fa-solid fa-database"></i> SQL Server</div>
+            <div class="marquee-item"><i class="fa-solid fa-server"></i> PostgreSQL</div>
+            <div class="marquee-item"><i class="fa-brands fa-html5"></i> HTML5</div>
+            <div class="marquee-item"><i class="fa-brands fa-css3-alt"></i> CSS3</div>
+            <div class="marquee-item"><i class="fa-brands fa-js"></i> JavaScript</div>
+            <div class="marquee-item"><i class="fa-brands fa-git-alt"></i> Git</div>
+            <div class="marquee-item"><i class="fa-brands fa-github"></i> GitHub</div>
+        </div>
+    </div>
+
     <!-- ========== Stats ========== -->
-    <section id="stats" style="padding-top: 0;">
+    <section id="stats">
         <div class="stats-container">
             <div class="stat-card" data-aos="fade-up">
                 <i class="fa-solid fa-briefcase"></i>
@@ -806,9 +1047,93 @@
     <section id="about">
         <h2 class="section-title" data-aos="fade-up">نبذة <span>عني</span></h2>
         <div class="card" data-aos="fade-up" style="max-width: 900px; margin: 0 auto; text-align: center;">
-            <p style="font-size: 18px; line-height: 1.8;">
-                مهندس معلوماتية ومطور ويب شامل (Full-Stack) متخصص في Angular و ASP.NET Core. أمتلك خبرة عملية قوية في تصميم وتطوير الأنظمة البرمجية الأساسية، وتطبيق أنماط التصميم المتقدمة مثل CQRS و MediatR. أعمل حالياً على تطوير أنظمة التحول الرقمي في المؤسسة العامة للخطوط الحديدية السورية، ولدي شغف دائم بتعلم تقنيات الويب الحديثة وتصميم واجهات مستخدم استثنائية.
+            <p style="font-size: 17px; line-height: 1.9;">
+                مهندس معلوماتية ومطور ويب شامل (Full-Stack) متخصص في Angular و ASP.NET Core. أمتلك خبرة عملية قوية في تصميم وتطوير الأنظمة البرمجية الأساسية، وتطبيق أنماط التصميم المتقدمة مثل CQRS و MediatR. أعمل حالياً على تطوير أنظمة التحول الرقمي في المؤسسة العامة للخطوط الحديدية السورية، ولدي شغف دائم بتعلم تقنيات الويب الحديثة وتصميم واجهات مستخدم استثنائية. أعمل مع قواعد بيانات SQL Server و PostgreSQL.
             </p>
+        </div>
+    </section>
+
+    <!-- ========== Services ========== -->
+    <section id="services">
+        <h2 class="section-title" data-aos="fade-up">الخدمات <span>التي أقدمها</span></h2>
+        <p class="section-subtitle" data-aos="fade-up">حلول برمجية احترافية تلبي احتياجاتك بأعلى معايير الجودة</p>
+        <div class="services-grid">
+            <div class="service-card" data-aos="fade-up">
+                <div class="service-icon"><i class="fa-solid fa-globe"></i></div>
+                <h3>تطوير مواقع ويب</h3>
+                <p>مواقع احترافية سريعة ومتجاوبة باستخدام ASP.NET Core و Angular، مع لوحات تحكم كاملة.</p>
+                <a href="https://wa.me/963934915776?text=مرحباً عبد الكريم، أريد خدمة تطوير موقع ويب" target="_blank" class="service-btn">
+                    <i class="fa-brands fa-whatsapp"></i> اطلب الخدمة
+                </a>
+            </div>
+            <div class="service-card" data-aos="fade-up" data-aos-delay="100">
+                <div class="service-icon"><i class="fa-solid fa-mobile-screen"></i></div>
+                <h3>تطبيقات الموبايل</h3>
+                <p>تطبيقات هواتف ذكية لأنظمة Android و iOS باستخدام .NET MAUI، بأداء عالٍ وواجهات عصرية.</p>
+                <a href="https://wa.me/963934915776?text=مرحباً عبد الكريم، أريد خدمة تطوير تطبيق موبايل" target="_blank" class="service-btn">
+                    <i class="fa-brands fa-whatsapp"></i> اطلب الخدمة
+                </a>
+            </div>
+            <div class="service-card" data-aos="fade-up" data-aos-delay="200">
+                <div class="service-icon"><i class="fa-solid fa-building"></i></div>
+                <h3>أنظمة ERP</h3>
+                <p>بناء أنظمة إدارة موارد المؤسسات المتكاملة لربط جميع الأقسام والعمليات في نظام مركزي واحد.</p>
+                <a href="https://wa.me/963934915776?text=مرحباً عبد الكريم، أريد خدمة بناء نظام ERP" target="_blank" class="service-btn">
+                    <i class="fa-brands fa-whatsapp"></i> اطلب الخدمة
+                </a>
+            </div>
+            <div class="service-card" data-aos="fade-up" data-aos-delay="300">
+                <div class="service-icon"><i class="fa-solid fa-database"></i></div>
+                <h3>تصميم قواعد البيانات</h3>
+                <p>تصميم وإدارة قواعد بيانات علائقية احترافية باستخدام SQL Server و PostgreSQL مع تحسين الأداء.</p>
+                <a href="https://wa.me/963934915776?text=مرحباً عبد الكريم، أريد خدمة تصميم قاعدة بيانات" target="_blank" class="service-btn">
+                    <i class="fa-brands fa-whatsapp"></i> اطلب الخدمة
+                </a>
+            </div>
+            <div class="service-card" data-aos="fade-up" data-aos-delay="400">
+                <div class="service-icon"><i class="fa-solid fa-wrench"></i></div>
+                <h3>صيانة وتطوير أنظمة</h3>
+                <p>صيانة وتطوير الأنظمة القائمة، وإصلاح الأخطاء، وإضافة ميزات جديدة باحترافية.</p>
+                <a href="https://wa.me/963934915776?text=مرحباً عبد الكريم، أحتاج صيانة/تطوير نظام قائم" target="_blank" class="service-btn">
+                    <i class="fa-brands fa-whatsapp"></i> اطلب الخدمة
+                </a>
+            </div>
+            <div class="service-card" data-aos="fade-up" data-aos-delay="500">
+                <div class="service-icon"><i class="fa-solid fa-graduation-cap"></i></div>
+                <h3>استشارات ودروس تقنية</h3>
+                <p>استشارات برمجية متخصصة ودروس خصوصية في البرمجة والتحول الرقمي (أونلاين).</p>
+                <a href="https://wa.me/963934915776?text=مرحباً عبد الكريم، أريد خدمة استشارة/دروس تقنية" target="_blank" class="service-btn">
+                    <i class="fa-brands fa-whatsapp"></i> اطلب الخدمة
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========== Why Choose Me ========== -->
+    <section id="why">
+        <h2 class="section-title" data-aos="fade-up">لماذا <span>تختارني؟</span></h2>
+        <p class="section-subtitle" data-aos="fade-up">ما يميزني عن غيري في سوق تطوير البرمجيات</p>
+        <div class="why-grid">
+            <div class="why-card" data-aos="fade-up">
+                <i class="fa-solid fa-briefcase why-icon"></i>
+                <h3>خبرة مؤسساتية حقيقية</h3>
+                <p>عملت على أنظمة حقيقية في المؤسسة العامة للخطوط الحديدية، وشاركت في مشاريع التحول الرقمي الفعلية.</p>
+            </div>
+            <div class="why-card" data-aos="fade-up" data-aos-delay="100">
+                <i class="fa-solid fa-layer-group why-icon"></i>
+                <h3>أنماط تصميم متقدمة</h3>
+                <p>أتقن تطبيق CQRS, MediatR, Repository Pattern لبناء أنظمة قابلة للتوسع والصيانة على المدى الطويل.</p>
+            </div>
+            <div class="why-card" data-aos="fade-up" data-aos-delay="200">
+                <i class="fa-solid fa-clock why-icon"></i>
+                <h3>تسليم في الوقت</h3>
+                <p>ألتزم بمواعيد التسليم وأقدم تحديثات دورية أثناء العمل لضمان رضاك التام في كل مرحلة.</p>
+            </div>
+            <div class="why-card" data-aos="fade-up" data-aos-delay="300">
+                <i class="fa-solid fa-headset why-icon"></i>
+                <h3>دعم فني مستمر</h3>
+                <p>دعم فني بعد التسليم، مع إمكانية الصيانة الدورية وتطوير الميزات مستقبلاً.</p>
+            </div>
         </div>
     </section>
 
@@ -910,7 +1235,7 @@
                 <div class="course-icon"><i class="fa-solid fa-mobile-screen-button"></i></div>
                 <div class="course-info">
                     <h3>تطوير تطبيقات .NET MAUI</h3>
-                    <p>دورة شاملة في بناء تطبيقات متعددة المنصات</p>
+                    <p>بناء تطبيقات متعددة المنصات</p>
                     <span class="course-badge">.NET CORE</span>
                 </div>
             </div>
@@ -974,7 +1299,7 @@
                 <div class="course-icon"><i class="fa-solid fa-desktop"></i></div>
                 <div class="course-info">
                     <h3>الرخصة الدولية لقيادة الحاسوب</h3>
-                    <p>ICDL - مهارات الحاسوب الأساسية والمتقدمة</p>
+                    <p>ICDL - مهارات الحاسوب</p>
                     <span class="course-badge">OCTA Tech</span>
                 </div>
             </div>
@@ -984,9 +1309,9 @@
     <!-- ========== Contact ========== -->
     <section id="contact">
         <h2 class="section-title" data-aos="fade-up">تواصل <span>معي</span></h2>
+        <p class="section-subtitle" data-aos="fade-up">سأرد عليك في أقرب وقت ممكن. لا تتردد في التواصل لأي استفسار أو طلب خدمة.</p>
         <div class="contact-container" data-aos="fade-up">
             <form class="contact-form" action="https://formsubmit.co/abdonedal911@gmail.com" method="POST">
-                <!-- إعدادات FormSubmit -->
                 <input type="hidden" name="_captcha" value="false">
                 <input type="hidden" name="_subject" value="رسالة جديدة من موقع البورتفوليو">
                 <input type="hidden" name="_template" value="table">
@@ -1013,7 +1338,10 @@
                     <i class="fa-solid fa-paper-plane"></i> إرسال الرسالة
                 </button>
             </form>
-
+            <p class="response-time">
+                <i class="fa-solid fa-clock"></i>
+                متوسط وقت الرد: خلال 24 ساعة
+            </p>
             <div class="contact-info">
                 <div class="contact-info-item">
                     <i class="fa-solid fa-envelope"></i>
@@ -1022,6 +1350,10 @@
                 <div class="contact-info-item">
                     <i class="fa-solid fa-phone"></i>
                     <a href="tel:+963934915776">+963 934 915 776</a>
+                </div>
+                <div class="contact-info-item">
+                    <i class="fa-brands fa-whatsapp"></i>
+                    <a href="https://wa.me/963934915776" target="_blank">واتساب مباشر</a>
                 </div>
             </div>
         </div>
@@ -1051,10 +1383,8 @@
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
     <script>
-        // ===== AOS =====
         AOS.init({ duration: 1000, once: true, offset: 100 });
 
-        // ===== Typed.js =====
         new Typed('#typed', {
             strings: ['مطور ويب شامل (Full-Stack)', 'مهندس برمجيات', 'مطور تطبيقات .NET', 'خبير CQRS & MediatR'],
             typeSpeed: 50,
@@ -1062,7 +1392,7 @@
             loop: true
         });
 
-        // ===== Theme Toggle =====
+        // Theme Toggle
         const themeBtn = document.getElementById('themeBtn');
         const html = document.documentElement;
         const savedTheme = localStorage.getItem('portfolio-theme') || 'dark';
@@ -1082,7 +1412,7 @@
             icon.className = theme === 'dark' ? 'fa-solid fa-moon' : 'fa-solid fa-sun';
         }
 
-        // ===== Mobile Menu =====
+        // Mobile Menu
         const hamburger = document.getElementById('hamburger');
         const navLinks = document.getElementById('navLinks');
 
@@ -1099,7 +1429,7 @@
             });
         });
 
-        // ===== Active Nav on Scroll =====
+        // Active Nav on Scroll
         const sections = document.querySelectorAll('section[id]');
         const navItems = document.querySelectorAll('.nav-links a');
 
@@ -1118,7 +1448,7 @@
 
         sections.forEach(section => observerNav.observe(section));
 
-        // ===== Scroll to Top =====
+        // Scroll to Top
         const scrollTopBtn = document.getElementById('scrollTop');
         window.addEventListener('scroll', () => {
             scrollTopBtn.classList.toggle('visible', window.scrollY > 500);
@@ -1127,7 +1457,7 @@
             window.scrollTo({ top: 0, behavior: 'smooth' });
         });
     </script>
-</body>
+    <!-- ========== Google Analytics ========== -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-YF8GGTLJVR"></script>
     <script>
         window.dataLayer = window.dataLayer || [];
@@ -1135,4 +1465,5 @@
         gtag('js', new Date());
         gtag('config', 'G-YF8GGTLJVR');
     </script>
+</body>
 </html>
