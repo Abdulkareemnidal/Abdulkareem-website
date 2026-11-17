@@ -4,8 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>عبد الكريم عبد القادر | مهندس برمجيات</title>
-    <meta name="description" content="عبد الكريم عبد القادر — مهندس برمجيات Full-Stack: .NET، Angular، Flutter و Firebase.">
-
+    
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@300;400;500;700;800&display=swap" rel="stylesheet">
@@ -14,45 +13,35 @@
 
     <style>
         :root, [data-theme="dark"] {
-            --bg-color: #071018;
-            --bg-accent: #0c1a24;
-            --card-bg: rgba(18, 32, 44, 0.72);
-            --text-main: #f1f5f9;
+            --bg-color: #0b1120;
+            --card-bg: #1e293b;
+            --text-main: #f8fafc;
             --text-muted: #94a3b8;
-            --primary: #2dd4bf;
-            --primary-deep: #0d9488;
-            --secondary: #38bdf8;
-            --accent: #fbbf24;
-            --gradient: linear-gradient(135deg, #14b8a6, #0284c7);
-            --nav-bg: rgba(7, 16, 24, 0.88);
-            --border-color: rgba(148, 163, 184, 0.12);
-            --input-bg: #0a1620;
-            --input-border: rgba(148, 163, 184, 0.18);
+            --primary: #38bdf8;
+            --secondary: #818cf8;
+            --gradient: linear-gradient(135deg, var(--primary), var(--secondary));
+            --nav-bg: rgba(11, 17, 32, 0.85);
+            --border-color: rgba(255, 255, 255, 0.06);
+            --input-bg: #0f172a;
+            --input-border: rgba(255, 255, 255, 0.1);
             --whatsapp-color: #25d366;
-            --success: #34d399;
-            --shadow-color: rgba(0, 0, 0, 0.35);
-            --hero-glow: radial-gradient(ellipse 70% 55% at 75% 35%, rgba(45, 212, 191, 0.14), transparent 60%),
-                         radial-gradient(ellipse 50% 45% at 15% 70%, rgba(56, 189, 248, 0.1), transparent 55%);
+            --success: #10b981;
+            --shadow-color: rgba(0, 0, 0, 0.4);
         }
 
         [data-theme="light"] {
-            --bg-color: #f0f5f8;
-            --bg-accent: #e4eef3;
-            --card-bg: rgba(255, 255, 255, 0.85);
+            --bg-color: #f1f5f9;
+            --card-bg: #ffffff;
             --text-main: #0f172a;
             --text-muted: #475569;
-            --primary: #0f766e;
-            --primary-deep: #0d9488;
-            --secondary: #0369a1;
-            --accent: #b45309;
-            --gradient: linear-gradient(135deg, #0f766e, #0369a1);
-            --nav-bg: rgba(240, 245, 248, 0.92);
-            --border-color: rgba(15, 23, 42, 0.08);
-            --input-bg: #ffffff;
+            --primary: #0284c7;
+            --secondary: #6366f1;
+            --gradient: linear-gradient(135deg, var(--primary), var(--secondary));
+            --nav-bg: rgba(241, 245, 249, 0.9);
+            --border-color: rgba(0, 0, 0, 0.08);
+            --input-bg: #f8fafc;
             --input-border: #cbd5e1;
-            --shadow-color: rgba(15, 23, 42, 0.08);
-            --hero-glow: radial-gradient(ellipse 70% 55% at 75% 30%, rgba(15, 118, 110, 0.12), transparent 60%),
-                         radial-gradient(ellipse 50% 45% at 10% 75%, rgba(3, 105, 161, 0.08), transparent 55%);
+            --shadow-color: rgba(0, 0, 0, 0.1);
         }
 
         * {
@@ -65,10 +54,6 @@
 
         body {
             background-color: var(--bg-color);
-            background-image:
-                linear-gradient(180deg, var(--bg-accent) 0%, var(--bg-color) 28%, var(--bg-color) 100%),
-                var(--hero-glow);
-            background-attachment: fixed;
             color: var(--text-main);
             overflow-x: hidden;
             line-height: 1.6;
@@ -80,12 +65,12 @@
             position: fixed;
             top: 0;
             width: 100%;
-            padding: 16px 50px;
+            padding: 18px 50px;
             display: flex;
             justify-content: space-between;
             align-items: center;
             background: var(--nav-bg);
-            backdrop-filter: blur(12px);
+            backdrop-filter: blur(10px);
             z-index: 1000;
             border-bottom: 1px solid var(--border-color);
         }
@@ -93,15 +78,14 @@
         .logo {
             font-size: 22px;
             font-weight: 800;
-            color: var(--text-main);
-            letter-spacing: -0.02em;
+            background: var(--gradient);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
         }
-
-        .logo span { color: var(--primary); }
 
         .nav-links {
             display: flex;
-            gap: 22px;
+            gap: 25px;
             list-style: none;
         }
 
@@ -125,10 +109,8 @@
             transition: width 0.3s;
         }
 
-        .nav-links a:hover,
-        .nav-links a.active { color: var(--primary); }
-        .nav-links a.active::after,
-        .nav-links a:hover::after { width: 100%; }
+        .nav-links a:hover, .nav-links a.active { color: var(--primary); }
+        .nav-links a.active::after, .nav-links a:hover::after { width: 100%; }
 
         .nav-actions {
             display: flex;
@@ -137,7 +119,7 @@
         }
 
         .theme-btn {
-            background: transparent;
+            background: var(--card-bg);
             border: 1px solid var(--border-color);
             color: var(--text-main);
             width: 40px;
@@ -148,12 +130,12 @@
             display: flex;
             align-items: center;
             justify-content: center;
-            transition: color 0.3s, border-color 0.3s, transform 0.3s;
+            transition: all 0.3s;
         }
 
         .theme-btn:hover {
             color: var(--primary);
-            transform: rotate(18deg);
+            transform: rotate(20deg) scale(1.1);
             border-color: var(--primary);
         }
 
@@ -172,50 +154,66 @@
             display: flex;
             align-items: center;
             justify-content: space-between;
-            padding: 110px 10% 70px;
-            gap: 48px;
+            padding: 100px 10% 60px;
+            gap: 50px;
             position: relative;
         }
 
-        .hero::before {
-            content: '';
-            position: absolute;
-            inset: 0;
-            background: var(--hero-glow);
-            pointer-events: none;
-            z-index: 0;
-        }
+        .hero-content { flex: 1; }
 
-        .hero-content,
-        .hero-image {
-            position: relative;
-            z-index: 1;
-        }
-
-        .hero-content { flex: 1.1; }
-
-        .hero-role {
-            color: var(--primary);
-            font-size: 18px;
+        .available-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background: rgba(16, 185, 129, 0.15);
+            color: var(--success);
+            padding: 6px 16px;
+            border-radius: 20px;
+            font-size: 13px;
             font-weight: 700;
-            margin-bottom: 12px;
-            letter-spacing: 0.02em;
+            margin-bottom: 20px;
+            border: 1px solid rgba(16, 185, 129, 0.3);
+        }
+
+        .available-badge .dot {
+            width: 8px;
+            height: 8px;
+            background: var(--success);
+            border-radius: 50%;
+            animation: pulse-dot 1.5s infinite;
+        }
+
+        @keyframes pulse-dot {
+            0%, 100% { opacity: 1; transform: scale(1); }
+            50% { opacity: 0.5; transform: scale(1.3); }
+        }
+
+        .hero-content h3 {
+            color: var(--primary);
+            font-size: 22px;
+            margin-bottom: 10px;
         }
 
         .hero-content h1 {
-            font-size: clamp(2.4rem, 5vw, 3.6rem);
+            font-size: 54px;
             font-weight: 800;
-            margin-bottom: 18px;
-            line-height: 1.15;
-            letter-spacing: -0.02em;
+            margin-bottom: 15px;
+            line-height: 1.2;
+        }
+
+        .typing-text {
+            font-size: 26px;
+            color: var(--text-muted);
+            margin-bottom: 25px;
+            font-weight: 500;
+            height: 38px;
         }
 
         .hero-content p {
             color: var(--text-muted);
             font-size: 17px;
-            margin-bottom: 32px;
-            max-width: 34rem;
-            line-height: 1.85;
+            margin-bottom: 35px;
+            max-width: 600px;
         }
 
         .hero-btns {
@@ -228,11 +226,11 @@
             display: inline-flex;
             align-items: center;
             gap: 8px;
-            padding: 13px 28px;
+            padding: 12px 28px;
             background: var(--gradient);
             color: #fff;
             text-decoration: none;
-            border-radius: 999px;
+            border-radius: 30px;
             font-weight: 700;
             transition: transform 0.3s, box-shadow 0.3s;
             border: none;
@@ -242,21 +240,21 @@
 
         .btn:hover {
             transform: translateY(-3px);
-            box-shadow: 0 12px 28px rgba(20, 184, 166, 0.28);
+            box-shadow: 0 10px 20px rgba(56, 189, 248, 0.3);
         }
 
         .btn-outline {
             display: inline-flex;
             align-items: center;
             gap: 8px;
-            padding: 12px 26px;
+            padding: 12px 28px;
             background: transparent;
             color: var(--text-main);
             text-decoration: none;
-            border-radius: 999px;
+            border-radius: 30px;
             font-weight: 700;
             transition: all 0.3s;
-            border: 1.5px solid var(--primary);
+            border: 2px solid var(--primary);
             cursor: pointer;
             font-size: 15px;
         }
@@ -264,186 +262,45 @@
         .btn-outline:hover {
             transform: translateY(-3px);
             color: var(--primary);
-        }
-
-        .btn-ghost {
-            display: inline-flex;
-            align-items: center;
-            gap: 8px;
-            padding: 12px 18px;
-            background: transparent;
-            color: var(--text-muted);
-            text-decoration: none;
-            border-radius: 999px;
-            font-weight: 600;
-            border: 1px solid transparent;
-            transition: color 0.3s, border-color 0.3s;
-            font-size: 15px;
-        }
-
-        .btn-ghost:hover {
-            color: var(--primary);
-            border-color: var(--border-color);
+            box-shadow: 0 10px 20px rgba(56, 189, 248, 0.1);
         }
 
         .hero-image {
-            flex: 0.9;
+            flex: 1;
             display: flex;
             justify-content: center;
         }
 
-        .hero-photo {
-            position: relative;
-            width: min(380px, 78vw);
-            aspect-ratio: 1;
-        }
-
-        .hero-photo::after {
-            content: '';
-            position: absolute;
-            inset: -12%;
-            background: radial-gradient(circle, rgba(45, 212, 191, 0.22), transparent 68%);
-            z-index: 0;
-            animation: pulse-glow 5s ease-in-out infinite;
-        }
-
-        .hero-photo img {
-            position: relative;
-            z-index: 1;
-            width: 100%;
-            height: 100%;
+        .hero-image img {
+            width: 400px;
+            height: 400px;
             object-fit: cover;
-            border-radius: 42% 58% 55% 45% / 48% 42% 58% 52%;
-            border: 3px solid rgba(45, 212, 191, 0.45);
-            box-shadow: 0 24px 60px rgba(0, 0, 0, 0.35);
-            animation: float 7s ease-in-out infinite;
+            border-radius: 50%;
+            border: 5px solid var(--primary);
+            box-shadow: 0 0 40px rgba(56, 189, 248, 0.5);
+            animation: float 6s ease-in-out infinite;
             display: block;
         }
 
         @keyframes float {
-            0%, 100% { transform: translateY(0); }
-            50% { transform: translateY(-14px); }
-        }
-
-        @keyframes pulse-glow {
-            0%, 100% { opacity: 0.7; transform: scale(1); }
-            50% { opacity: 1; transform: scale(1.04); }
-        }
-
-        /* ============ Sections ============ */
-        section { padding: 88px 10%; }
-
-        .section-title {
-            text-align: center;
-            font-size: 34px;
-            font-weight: 800;
-            margin-bottom: 12px;
-        }
-
-        .section-title span { color: var(--primary); }
-
-        .section-subtitle {
-            text-align: center;
-            color: var(--text-muted);
-            font-size: 16px;
-            margin-bottom: 48px;
-            max-width: 560px;
-            margin-left: auto;
-            margin-right: auto;
-        }
-
-        /* ============ About ============ */
-        .about-block {
-            max-width: 860px;
-            margin: 0 auto;
-            text-align: center;
-        }
-
-        .about-block p {
-            font-size: 17px;
-            line-height: 1.95;
-            color: var(--text-muted);
-        }
-
-        .about-block strong {
-            color: var(--text-main);
-            font-weight: 700;
-        }
-
-        .stats-strip {
-            display: grid;
-            grid-template-columns: repeat(4, 1fr);
-            gap: 8px;
-            max-width: 860px;
-            margin: 42px auto 0;
-            padding-top: 28px;
-            border-top: 1px solid var(--border-color);
-        }
-
-        .stat-item {
-            text-align: center;
-            padding: 8px 6px;
-        }
-
-        .stat-item h3 {
-            font-size: 28px;
-            font-weight: 800;
-            color: var(--primary);
-            margin-bottom: 4px;
-        }
-
-        .stat-item p {
-            color: var(--text-muted);
-            font-size: 13px;
-        }
-
-        /* ============ Skills ============ */
-        .skills-container {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 10px;
-            justify-content: center;
-        }
-
-        .skill-card {
-            background: transparent;
-            padding: 10px 18px;
-            border-radius: 999px;
-            display: flex;
-            align-items: center;
-            gap: 8px;
-            font-weight: 500;
-            font-size: 14px;
-            border: 1px solid var(--border-color);
-            transition: border-color 0.3s, color 0.3s, background 0.3s;
-        }
-
-        .skill-card:hover {
-            border-color: var(--primary);
-            color: var(--primary);
-            background: rgba(45, 212, 191, 0.06);
-        }
-
-        .skill-card i {
-            font-size: 16px;
-            color: var(--primary);
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-20px); }
         }
 
         /* ============ Tech Marquee ============ */
         .tech-marquee {
-            padding: 22px 0;
+            padding: 30px 0;
             overflow: hidden;
+            background: var(--card-bg);
             border-top: 1px solid var(--border-color);
             border-bottom: 1px solid var(--border-color);
-            background: transparent;
-            margin: 0 10%;
-            border-radius: 0;
+            position: relative;
         }
 
         .marquee-track {
             display: flex;
-            gap: 48px;
-            animation: scroll-marquee 36s linear infinite;
+            gap: 60px;
+            animation: scroll-marquee 30s linear infinite;
             width: fit-content;
         }
 
@@ -452,9 +309,9 @@
         .marquee-item {
             display: flex;
             align-items: center;
-            gap: 10px;
-            font-size: 16px;
-            font-weight: 600;
+            gap: 12px;
+            font-size: 20px;
+            font-weight: 700;
             color: var(--text-muted);
             white-space: nowrap;
             transition: color 0.3s;
@@ -463,7 +320,7 @@
         .marquee-item:hover { color: var(--primary); }
 
         .marquee-item i {
-            font-size: 20px;
+            font-size: 28px;
             color: var(--primary);
         }
 
@@ -472,52 +329,157 @@
             100% { transform: translateX(50%); }
         }
 
-        /* ============ Cards / grids ============ */
+        /* ============ Sections ============ */
+        section { padding: 90px 10%; }
+
+        .section-title {
+            text-align: center;
+            font-size: 36px;
+            font-weight: 800;
+            margin-bottom: 15px;
+        }
+
+        .section-title span { color: var(--primary); }
+
+        .section-subtitle {
+            text-align: center;
+            color: var(--text-muted);
+            font-size: 16px;
+            margin-bottom: 55px;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        /* ============ Stats ============ */
+        .stats-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 25px;
+        }
+
+        .stat-card {
+            background: var(--card-bg);
+            padding: 30px 20px;
+            border-radius: 15px;
+            text-align: center;
+            border: 1px solid var(--border-color);
+            transition: transform 0.3s, border-color 0.3s;
+        }
+
+        .stat-card:hover {
+            transform: translateY(-8px);
+            border-color: var(--primary);
+        }
+
+        .stat-card i {
+            font-size: 36px;
+            color: var(--primary);
+            margin-bottom: 12px;
+        }
+
+        .stat-card h3 {
+            font-size: 34px;
+            font-weight: 800;
+            background: var(--gradient);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .stat-card p {
+            color: var(--text-muted);
+            font-size: 14px;
+        }
+
+        /* ============ Skills ============ */
+        .skills-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 12px;
+            justify-content: center;
+        }
+
+        .skill-card {
+            background: var(--card-bg);
+            padding: 13px 22px;
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-weight: 500;
+            font-size: 15px;
+            border: 1px solid var(--border-color);
+            transition: transform 0.3s, border-color 0.3s;
+        }
+
+        .skill-card:hover {
+            transform: translateY(-5px);
+            border-color: var(--primary);
+        }
+
+        .skill-card i {
+            font-size: 22px;
+            color: var(--primary);
+        }
+
+        /* ============ Cards ============ */
         .grid-container {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 22px;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 25px;
         }
 
         .card {
-            background: transparent;
-            padding: 26px 8px 26px 8px;
-            border-radius: 0;
-            border: none;
-            border-bottom: 1px solid var(--border-color);
-            transition: border-color 0.3s;
+            background: var(--card-bg);
+            padding: 28px;
+            border-radius: 15px;
+            border: 1px solid var(--border-color);
+            transition: transform 0.3s, box-shadow 0.3s;
             position: relative;
+            overflow: hidden;
             display: flex;
             flex-direction: column;
         }
 
-        .card:hover { border-bottom-color: var(--primary); }
+        .card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            right: 0;
+            width: 4px;
+            height: 100%;
+            background: var(--gradient);
+        }
+
+        .card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 40px var(--shadow-color);
+        }
 
         .card h3 {
-            font-size: 19px;
-            margin-bottom: 6px;
+            font-size: 20px;
+            margin-bottom: 8px;
             color: var(--text-main);
         }
 
         .card h4 {
-            font-size: 14px;
+            font-size: 15px;
             color: var(--primary);
-            margin-bottom: 10px;
-            font-weight: 600;
+            margin-bottom: 12px;
+            font-weight: 500;
         }
 
         .card p {
             color: var(--text-muted);
             font-size: 14px;
             flex-grow: 1;
-            line-height: 1.75;
         }
 
         .project-link {
             display: inline-flex;
             align-items: center;
             gap: 8px;
-            margin-top: 16px;
+            margin-top: 18px;
             color: var(--primary);
             text-decoration: none;
             font-weight: 700;
@@ -528,47 +490,50 @@
 
         .project-link:hover {
             color: var(--secondary);
-            transform: translateX(-4px);
+            transform: translateX(-5px);
         }
 
         /* ============ Services ============ */
         .services-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 28px;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 25px;
         }
 
         .service-card {
-            background: transparent;
-            padding: 8px 4px 20px;
-            border: none;
-            border-top: 2px solid var(--border-color);
-            text-align: right;
-            transition: border-color 0.3s;
+            background: var(--card-bg);
+            padding: 35px 28px;
+            border-radius: 18px;
+            border: 1px solid var(--border-color);
+            text-align: center;
+            transition: transform 0.3s, border-color 0.3s, box-shadow 0.3s;
             display: flex;
             flex-direction: column;
         }
 
-        .service-card:hover { border-top-color: var(--primary); }
+        .service-card:hover {
+            transform: translateY(-10px);
+            border-color: var(--primary);
+            box-shadow: 0 20px 40px var(--shadow-color);
+        }
 
         .service-icon {
-            width: 48px;
-            height: 48px;
-            margin: 18px 0 16px;
-            background: transparent;
-            border: 1px solid var(--border-color);
-            border-radius: 12px;
+            width: 70px;
+            height: 70px;
+            margin: 0 auto 20px;
+            background: var(--gradient);
+            border-radius: 20px;
             display: flex;
             align-items: center;
             justify-content: center;
-            color: var(--primary);
-            font-size: 20px;
-            box-shadow: none;
+            color: #fff;
+            font-size: 30px;
+            box-shadow: 0 10px 25px rgba(56, 189, 248, 0.3);
         }
 
         .service-card h3 {
-            font-size: 18px;
-            margin-bottom: 10px;
+            font-size: 20px;
+            margin-bottom: 12px;
             color: var(--text-main);
         }
 
@@ -576,8 +541,7 @@
             color: var(--text-muted);
             font-size: 14px;
             flex-grow: 1;
-            margin-bottom: 18px;
-            line-height: 1.75;
+            margin-bottom: 20px;
         }
 
         .service-btn {
@@ -585,93 +549,101 @@
             align-items: center;
             justify-content: center;
             gap: 8px;
-            padding: 10px 20px;
+            padding: 11px 24px;
             background: var(--whatsapp-color);
             color: #fff;
             text-decoration: none;
-            border-radius: 999px;
+            border-radius: 25px;
             font-weight: 700;
             font-size: 14px;
             transition: all 0.3s;
             border: none;
             cursor: pointer;
-            align-self: flex-start;
         }
 
         .service-btn:hover {
             background: #128c7e;
             transform: translateY(-2px);
-            box-shadow: 0 8px 20px rgba(37, 211, 102, 0.3);
+            box-shadow: 0 8px 20px rgba(37, 211, 102, 0.35);
         }
 
         /* ============ Why Choose Me ============ */
         .why-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-            gap: 28px;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 25px;
         }
 
         .why-card {
-            background: transparent;
-            padding: 8px 4px;
-            border: none;
+            background: var(--card-bg);
+            padding: 30px 25px;
+            border-radius: 15px;
+            border: 1px solid var(--border-color);
+            transition: transform 0.3s, border-color 0.3s;
+        }
+
+        .why-card:hover {
+            transform: translateY(-8px);
+            border-color: var(--primary);
         }
 
         .why-icon {
-            font-size: 26px;
+            font-size: 34px;
             color: var(--primary);
-            margin-bottom: 12px;
+            margin-bottom: 15px;
         }
 
         .why-card h3 {
-            font-size: 17px;
-            margin-bottom: 8px;
+            font-size: 18px;
+            margin-bottom: 10px;
             color: var(--text-main);
         }
 
         .why-card p {
             color: var(--text-muted);
             font-size: 14px;
-            line-height: 1.75;
+            line-height: 1.7;
         }
 
         /* ============ Courses ============ */
         .courses-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(290px, 1fr));
-            gap: 18px;
+            grid-template-columns: repeat(auto-fit, minmax(310px, 1fr));
+            gap: 22px;
         }
 
         .course-card {
-            background: transparent;
-            padding: 16px 4px;
-            border: none;
-            border-bottom: 1px solid var(--border-color);
+            background: var(--card-bg);
+            padding: 22px;
+            border-radius: 15px;
+            border: 1px solid var(--border-color);
             display: flex;
-            gap: 16px;
+            gap: 18px;
             align-items: flex-start;
-            transition: border-color 0.3s;
+            transition: transform 0.3s, border-color 0.3s;
         }
 
-        .course-card:hover { border-bottom-color: var(--primary); }
+        .course-card:hover {
+            transform: translateY(-8px);
+            border-color: var(--primary);
+        }
 
         .course-icon {
-            width: 44px;
-            height: 44px;
-            min-width: 44px;
-            background: transparent;
-            border: 1px solid var(--border-color);
-            border-radius: 10px;
+            width: 50px;
+            height: 50px;
+            min-width: 50px;
+            background: var(--gradient);
+            border-radius: 12px;
             display: flex;
             align-items: center;
             justify-content: center;
-            color: var(--primary);
-            font-size: 18px;
+            color: #fff;
+            font-size: 20px;
         }
 
         .course-info h3 {
-            font-size: 15px;
-            margin-bottom: 4px;
+            font-size: 16px;
+            margin-bottom: 6px;
             color: var(--text-main);
             line-height: 1.4;
         }
@@ -683,12 +655,11 @@
 
         .course-badge {
             display: inline-block;
-            margin-top: 8px;
-            padding: 3px 10px;
-            background: transparent;
+            margin-top: 10px;
+            padding: 4px 12px;
+            background: rgba(56, 189, 248, 0.15);
             color: var(--primary);
-            border: 1px solid rgba(45, 212, 191, 0.35);
-            border-radius: 999px;
+            border-radius: 20px;
             font-size: 11px;
             font-weight: 600;
         }
@@ -697,11 +668,11 @@
         .contact-container {
             max-width: 700px;
             margin: 0 auto;
-            background: transparent;
-            padding: 8px 0 0;
-            border-radius: 0;
-            border: none;
-            box-shadow: none;
+            background: var(--card-bg);
+            padding: 45px 35px;
+            border-radius: 20px;
+            border: 1px solid var(--border-color);
+            box-shadow: 0 20px 50px var(--shadow-color);
         }
 
         .contact-form {
@@ -729,7 +700,7 @@
         .form-group textarea {
             padding: 13px 16px;
             background: var(--input-bg);
-            border: 1.5px solid var(--input-border);
+            border: 2px solid var(--input-border);
             border-radius: 10px;
             color: var(--text-main);
             font-size: 15px;
@@ -741,7 +712,7 @@
         .form-group input:focus,
         .form-group textarea:focus {
             border-color: var(--primary);
-            box-shadow: 0 0 0 3px rgba(45, 212, 191, 0.12);
+            box-shadow: 0 0 0 3px rgba(56, 189, 248, 0.15);
         }
 
         .form-group textarea {
@@ -756,7 +727,7 @@
 
         .response-time {
             text-align: center;
-            margin-top: 24px;
+            margin-top: 25px;
             color: var(--text-muted);
             font-size: 13px;
         }
@@ -769,10 +740,10 @@
         .contact-info {
             display: flex;
             justify-content: center;
-            gap: 28px;
-            margin-top: 28px;
+            gap: 35px;
+            margin-top: 35px;
             flex-wrap: wrap;
-            padding-top: 22px;
+            padding-top: 25px;
             border-top: 1px solid var(--border-color);
         }
 
@@ -801,7 +772,7 @@
         footer {
             text-align: center;
             padding: 40px;
-            background: transparent;
+            background: var(--card-bg);
             border-top: 1px solid var(--border-color);
         }
 
@@ -820,7 +791,7 @@
 
         .social-links a:hover {
             color: var(--primary);
-            transform: scale(1.15) translateY(-2px);
+            transform: scale(1.2) translateY(-3px);
         }
 
         .social-links a.whatsapp-link:hover { color: var(--whatsapp-color); }
@@ -828,14 +799,14 @@
         /* ============ Floating Buttons ============ */
         .whatsapp-float {
             position: fixed;
-            width: 58px;
-            height: 58px;
+            width: 60px;
+            height: 60px;
             bottom: 40px;
             left: 40px;
             background-color: var(--whatsapp-color);
             color: #FFF;
             border-radius: 50%;
-            font-size: 30px;
+            font-size: 32px;
             box-shadow: 0 4px 15px rgba(37, 211, 102, 0.4);
             z-index: 999;
             display: flex;
@@ -847,21 +818,21 @@
         }
 
         .whatsapp-float:hover {
-            transform: scale(1.08);
+            transform: scale(1.1);
             background-color: #128c7e;
             animation: none;
         }
 
         @keyframes pulse-whatsapp {
             0% { box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.7); }
-            70% { box-shadow: 0 0 0 14px rgba(37, 211, 102, 0); }
+            70% { box-shadow: 0 0 0 15px rgba(37, 211, 102, 0); }
             100% { box-shadow: 0 0 0 0 rgba(37, 211, 102, 0); }
         }
 
         .scroll-top {
             position: fixed;
-            width: 48px;
-            height: 48px;
+            width: 50px;
+            height: 50px;
             bottom: 110px;
             left: 45px;
             background: var(--gradient);
@@ -878,7 +849,7 @@
             visibility: hidden;
             transform: translateY(20px);
             transition: all 0.3s ease;
-            box-shadow: 0 4px 15px rgba(20, 184, 166, 0.35);
+            box-shadow: 0 4px 15px rgba(56, 189, 248, 0.4);
         }
 
         .scroll-top.visible {
@@ -892,28 +863,29 @@
             .hero {
                 flex-direction: column-reverse;
                 text-align: center;
-                padding-top: 120px;
-                padding-bottom: 48px;
-                gap: 36px;
+                padding-top: 130px;
+                padding-bottom: 50px;
             }
-            .hero-content p { margin: 0 auto 28px; }
+            .hero-content p { margin: 0 auto 30px; }
             .hero-btns { justify-content: center; }
-            .hero-photo { width: min(260px, 70vw); }
+            .hero-image img { width: 280px; height: 280px; }
+            .hero-content h1 { font-size: 38px; }
+            .typing-text { font-size: 20px; }
 
-            nav { padding: 14px 20px; }
+            nav { padding: 15px 20px; }
             .hamburger { display: block; }
 
             .nav-links {
                 position: fixed;
-                top: 68px;
+                top: 70px;
                 right: -100%;
                 width: 80%;
                 max-width: 300px;
-                height: calc(100vh - 68px);
-                background: var(--bg-color);
+                height: calc(100vh - 70px);
+                background: var(--card-bg);
                 flex-direction: column;
-                padding: 28px;
-                gap: 18px;
+                padding: 30px;
+                gap: 20px;
                 border-left: 1px solid var(--border-color);
                 transition: right 0.4s ease;
                 box-shadow: -10px 0 30px var(--shadow-color);
@@ -922,36 +894,32 @@
             .nav-links.open { right: 0; }
 
             .form-row { grid-template-columns: 1fr; }
-            .contact-info { gap: 14px; flex-direction: column; align-items: center; }
+            .contact-container { padding: 30px 20px; }
+            .contact-info { gap: 15px; flex-direction: column; align-items: center; }
 
             .whatsapp-float {
                 bottom: 20px;
                 left: 20px;
-                width: 54px;
-                height: 54px;
-                font-size: 26px;
+                width: 55px;
+                height: 55px;
+                font-size: 28px;
             }
             .scroll-top {
-                bottom: 88px;
+                bottom: 90px;
                 left: 25px;
-                width: 44px;
-                height: 44px;
+                width: 45px;
+                height: 45px;
             }
             section { padding: 60px 5%; }
             .section-title { font-size: 28px; }
-            .tech-marquee { margin: 0 5%; padding: 18px 0; }
-            .marquee-item { font-size: 14px; }
-            .marquee-item i { font-size: 18px; }
-            .stats-strip { grid-template-columns: repeat(2, 1fr); gap: 16px; }
-            .service-card,
-            .service-btn { text-align: center; align-self: center; }
-            .service-icon { margin-left: auto; margin-right: auto; }
+            .tech-marquee { padding: 20px 0; }
+            .marquee-item { font-size: 16px; }
+            .marquee-item i { font-size: 22px; }
         }
 
         @media (max-width: 480px) {
-            .hero-content h1 { font-size: 2rem; }
-            .hero-photo { width: min(220px, 72vw); }
-            .stats-strip { grid-template-columns: 1fr 1fr; }
+            .hero-content h1 { font-size: 30px; }
+            .hero-image img { width: 220px; height: 220px; }
         }
     </style>
 </head>
@@ -959,7 +927,7 @@
 
     <!-- ========== Navbar ========== -->
     <nav>
-        <div class="logo">عبد <span>الكريم</span></div>
+        <div class="logo">عبد الكريم</div>
         <ul class="nav-links" id="navLinks">
             <li><a href="#home">الرئيسية</a></li>
             <li><a href="#about">نبذة</a></li>
@@ -970,10 +938,10 @@
             <li><a href="#contact">تواصل</a></li>
         </ul>
         <div class="nav-actions">
-            <button class="theme-btn" id="themeBtn" title="تبديل الوضع" aria-label="تبديل الوضع">
+            <button class="theme-btn" id="themeBtn" title="تبديل الوضع">
                 <i class="fa-solid fa-moon"></i>
             </button>
-            <button class="hamburger" id="hamburger" aria-label="القائمة">
+            <button class="hamburger" id="hamburger">
                 <i class="fa-solid fa-bars"></i>
             </button>
         </div>
@@ -982,24 +950,92 @@
     <!-- ========== Hero ========== -->
     <section class="hero" id="home">
         <div class="hero-content" data-aos="fade-left">
-            <p class="hero-role">مهندس برمجيات · Full-Stack</p>
+            <div class="available-badge">
+                <span class="dot"></span>
+                متاح للعمل الآن
+            </div>
+            <h3>مرحباً، أنا</h3>
             <h1>عبد الكريم عبد القادر</h1>
-            <p>أبني أنظمة مؤسساتية وتطبيقات موبايل حديثة — من ASP.NET و Angular إلى Flutter و Firebase — مع تركيز على حلول واضحة وقابلة للتوسع.</p>
+            <div class="typing-text"><span id="typed"></span></div>
+            <p>مطور برمجيات شغوف بابتكار تطبيقات حديثة وسهلة الاستخدام. أساهم في بناء أنظمة مؤسساتية تدعم التحول الرقمي، وأبني تطبيقات موبايل بـ Flutter و Firebase، وأحل المشكلات المعقدة بكفاءة عالية.</p>
             <div class="hero-btns">
-                <a href="https://wa.me/963934915776?text=مرحباً عبد الكريم، تواصلت معك عبر موقعك" target="_blank" class="btn">
-                    <i class="fa-brands fa-whatsapp"></i> تواصل عبر واتساب
+                <a href="#contact" class="btn">
+                    <i class="fa-solid fa-paper-plane"></i> تواصل معي
                 </a>
                 <a href="cv.pdf" download class="btn-outline">
                     <i class="fa-solid fa-download"></i> تحميل السيرة الذاتية
                 </a>
-                <a href="#contact" class="btn-ghost">
-                    <i class="fa-solid fa-envelope"></i> رسالة
+                <a href="https://github.com/Abdulkareemnidal" target="_blank" class="btn-outline">
+                    <i class="fa-brands fa-github"></i> GitHub
                 </a>
             </div>
         </div>
         <div class="hero-image" data-aos="fade-right">
-            <div class="hero-photo">
-                <img src="profile.jpg" width="1000" height="859" alt="عبد الكريم عبد القادر">
+            <img src="profile.jpg" alt="عبد الكريم عبد القادر">
+        </div>
+    </section>
+
+    <!-- ========== Tech Marquee ========== -->
+    <div class="tech-marquee">
+        <div class="marquee-track">
+            <div class="marquee-item"><i class="fa-brands fa-microsoft"></i> .NET Core</div>
+            <div class="marquee-item"><i class="fa-brands fa-angular"></i> Angular</div>
+            <div class="marquee-item"><i class="fa-solid fa-mobile-screen"></i> Flutter</div>
+            <div class="marquee-item"><i class="fa-solid fa-fire"></i> Firebase</div>
+            <div class="marquee-item"><i class="fa-solid fa-database"></i> Firestore</div>
+            <div class="marquee-item"><i class="fa-solid fa-code"></i> C#</div>
+            <div class="marquee-item"><i class="fa-brands fa-python"></i> Python</div>
+            <div class="marquee-item"><i class="fa-brands fa-java"></i> Java</div>
+            <div class="marquee-item"><i class="fa-solid fa-database"></i> SQL Server</div>
+            <div class="marquee-item"><i class="fa-solid fa-server"></i> PostgreSQL</div>
+            <div class="marquee-item"><i class="fa-brands fa-docker"></i> Docker</div>
+            <div class="marquee-item"><i class="fa-brands fa-html5"></i> HTML5</div>
+            <div class="marquee-item"><i class="fa-brands fa-css3-alt"></i> CSS3</div>
+            <div class="marquee-item"><i class="fa-brands fa-js"></i> JavaScript</div>
+            <div class="marquee-item"><i class="fa-brands fa-git-alt"></i> Git</div>
+            <div class="marquee-item"><i class="fa-brands fa-github"></i> GitHub</div>
+            <!-- نسخة مكررة لضمان استمرار الحركة -->
+            <div class="marquee-item"><i class="fa-brands fa-microsoft"></i> .NET Core</div>
+            <div class="marquee-item"><i class="fa-brands fa-angular"></i> Angular</div>
+            <div class="marquee-item"><i class="fa-solid fa-mobile-screen"></i> Flutter</div>
+            <div class="marquee-item"><i class="fa-solid fa-fire"></i> Firebase</div>
+            <div class="marquee-item"><i class="fa-solid fa-database"></i> Firestore</div>
+            <div class="marquee-item"><i class="fa-solid fa-code"></i> C#</div>
+            <div class="marquee-item"><i class="fa-brands fa-python"></i> Python</div>
+            <div class="marquee-item"><i class="fa-brands fa-java"></i> Java</div>
+            <div class="marquee-item"><i class="fa-solid fa-database"></i> SQL Server</div>
+            <div class="marquee-item"><i class="fa-solid fa-server"></i> PostgreSQL</div>
+            <div class="marquee-item"><i class="fa-brands fa-docker"></i> Docker</div>
+            <div class="marquee-item"><i class="fa-brands fa-html5"></i> HTML5</div>
+            <div class="marquee-item"><i class="fa-brands fa-css3-alt"></i> CSS3</div>
+            <div class="marquee-item"><i class="fa-brands fa-js"></i> JavaScript</div>
+            <div class="marquee-item"><i class="fa-brands fa-git-alt"></i> Git</div>
+            <div class="marquee-item"><i class="fa-brands fa-github"></i> GitHub</div>
+        </div>
+    </div>
+
+    <!-- ========== Stats ========== -->
+    <section id="stats">
+        <div class="stats-container">
+            <div class="stat-card" data-aos="fade-up">
+                <i class="fa-solid fa-briefcase"></i>
+                <h3>3+</h3>
+                <p>سنوات خبرة</p>
+            </div>
+            <div class="stat-card" data-aos="fade-up" data-aos-delay="100">
+                <i class="fa-solid fa-diagram-project"></i>
+                <h3>15+</h3>
+                <p>مشروع منجز</p>
+            </div>
+            <div class="stat-card" data-aos="fade-up" data-aos-delay="200">
+                <i class="fa-solid fa-code"></i>
+                <h3>12+</h3>
+                <p>تقنيات متقنة</p>
+            </div>
+            <div class="stat-card" data-aos="fade-up" data-aos-delay="300">
+                <i class="fa-solid fa-certificate"></i>
+                <h3>10+</h3>
+                <p>شهادات ودورات</p>
             </div>
         </div>
     </section>
@@ -1007,41 +1043,17 @@
     <!-- ========== About ========== -->
     <section id="about">
         <h2 class="section-title" data-aos="fade-up">نبذة <span>عني</span></h2>
-        <div class="about-block" data-aos="fade-up">
-            <p>
-                مهندس معلوماتية ومطور ويب شامل متخصص في <strong>Angular</strong> و <strong>ASP.NET Core</strong>،
-                مع خبرة عملية في تصميم الأنظمة الأساسية وأنماط مثل CQRS و MediatR.
-                أعمل حالياً على أنظمة التحول الرقمي في المؤسسة العامة للخطوط الحديدية السورية،
-                وأستخدم SQL Server و PostgreSQL و Docker لبناء بيئات تطوير ونشر حديثة.
-                حديثاً وسّعت خبرتي نحو <strong>Flutter</strong> و <strong>Firebase</strong>
-                (Firestore، Authentication، Cloud Functions) وإدارة الحالة وواجهات API،
-                ضمن أعمال تعاونية مع وكلاء Cursor لبناء تطبيقات موبايل وخدمات سحابية.
+        <div class="card" data-aos="fade-up" style="max-width: 900px; margin: 0 auto; text-align: center;">
+            <p style="font-size: 17px; line-height: 1.9;">
+                مهندس معلوماتية ومطور ويب شامل (Full-Stack) متخصص في Angular و ASP.NET Core. أمتلك خبرة عملية قوية في تصميم وتطوير الأنظمة البرمجية الأساسية، وتطبيق أنماط التصميم المتقدمة مثل CQRS و MediatR. أعمل حالياً على تطوير أنظمة التحول الرقمي في المؤسسة العامة للخطوط الحديدية السورية، ولدي شغف دائم بتعلم تقنيات الويب الحديثة وتصميم واجهات مستخدم استثنائية. أعمل مع قواعد بيانات SQL Server و PostgreSQL، وأتقن التعامل مع حاويات Docker (Docker & Docker Compose) لبناء بيئات تطوير ونشر حديثة على جميع الأنظمة (Windows, Linux, Cloud). حديثاً وسّعت خبرتي نحو Flutter و Firebase (Firestore، Authentication، Cloud Functions) وإدارة الحالة وواجهات API، ضمن أعمال تعاونية مع وكلاء Cursor.
             </p>
-            <div class="stats-strip">
-                <div class="stat-item">
-                    <h3>3+</h3>
-                    <p>سنوات خبرة</p>
-                </div>
-                <div class="stat-item">
-                    <h3>15+</h3>
-                    <p>مشروع منجز</p>
-                </div>
-                <div class="stat-item">
-                    <h3>12+</h3>
-                    <p>تقنيات متقنة</p>
-                </div>
-                <div class="stat-item">
-                    <h3>10+</h3>
-                    <p>شهادات ودورات</p>
-                </div>
-            </div>
         </div>
     </section>
 
     <!-- ========== Services ========== -->
     <section id="services">
         <h2 class="section-title" data-aos="fade-up">الخدمات <span>التي أقدمها</span></h2>
-        <p class="section-subtitle" data-aos="fade-up">حلول برمجية واضحة — ويب، موبايل، وأنظمة مؤسسات</p>
+        <p class="section-subtitle" data-aos="fade-up">حلول برمجية احترافية تلبي احتياجاتك بأعلى معايير الجودة</p>
         <div class="services-grid">
             <div class="service-card" data-aos="fade-up">
                 <div class="service-icon"><i class="fa-solid fa-globe"></i></div>
@@ -1051,23 +1063,23 @@
                     <i class="fa-brands fa-whatsapp"></i> اطلب الخدمة
                 </a>
             </div>
-            <div class="service-card" data-aos="fade-up" data-aos-delay="80">
+            <div class="service-card" data-aos="fade-up" data-aos-delay="100">
                 <div class="service-icon"><i class="fa-solid fa-mobile-screen"></i></div>
                 <h3>تطبيقات الموبايل</h3>
-                <p>تطبيقات Android و iOS باستخدام Flutter مع Firebase، بالإضافة إلى .NET MAUI عند الحاجة لتكامل مع منظومة .NET.</p>
-                <a href="https://wa.me/963934915776?text=مرحباً عبد الكريم، أريد خدمة تطوير تطبيق موبايل Flutter أو MAUI" target="_blank" class="service-btn">
+                <p>تطبيقات هواتف ذكية لأنظمة Android و iOS باستخدام Flutter مع Firebase، و.NET MAUI عند الحاجة لتكامل مع منظومة .NET، بأداء عالٍ وواجهات عصرية.</p>
+                <a href="https://wa.me/963934915776?text=مرحباً عبد الكريم، أريد خدمة تطوير تطبيق موبايل" target="_blank" class="service-btn">
                     <i class="fa-brands fa-whatsapp"></i> اطلب الخدمة
                 </a>
             </div>
-            <div class="service-card" data-aos="fade-up" data-aos-delay="160">
+            <div class="service-card" data-aos="fade-up" data-aos-delay="150">
                 <div class="service-icon"><i class="fa-solid fa-cloud"></i></div>
                 <h3>Firebase والخدمات السحابية</h3>
-                <p>بناء خلفيات سحابية مع Firestore و Authentication و Cloud Functions، وربطها بتطبيقات الموبايل والويب عبر APIs.</p>
+                <p>خلفيات سحابية مع Firestore و Authentication و Cloud Functions، مربوطة بتطبيقات الموبايل والويب عبر APIs.</p>
                 <a href="https://wa.me/963934915776?text=مرحباً عبد الكريم، أريد خدمة Firebase أو خلفية سحابية" target="_blank" class="service-btn">
                     <i class="fa-brands fa-whatsapp"></i> اطلب الخدمة
                 </a>
             </div>
-            <div class="service-card" data-aos="fade-up" data-aos-delay="240">
+            <div class="service-card" data-aos="fade-up" data-aos-delay="200">
                 <div class="service-icon"><i class="fa-solid fa-building"></i></div>
                 <h3>أنظمة ERP</h3>
                 <p>بناء أنظمة إدارة موارد المؤسسات المتكاملة لربط جميع الأقسام والعمليات في نظام مركزي واحد.</p>
@@ -1075,10 +1087,10 @@
                     <i class="fa-brands fa-whatsapp"></i> اطلب الخدمة
                 </a>
             </div>
-            <div class="service-card" data-aos="fade-up" data-aos-delay="320">
+            <div class="service-card" data-aos="fade-up" data-aos-delay="300">
                 <div class="service-icon"><i class="fa-solid fa-database"></i></div>
                 <h3>تصميم قواعد البيانات</h3>
-                <p>تصميم وإدارة قواعد بيانات علائقية باستخدام SQL Server و PostgreSQL، مع تحسين الأداء والاستعلامات.</p>
+                <p>تصميم وإدارة قواعد بيانات علائقية احترافية باستخدام SQL Server و PostgreSQL مع تحسين الأداء.</p>
                 <a href="https://wa.me/963934915776?text=مرحباً عبد الكريم، أريد خدمة تصميم قاعدة بيانات" target="_blank" class="service-btn">
                     <i class="fa-brands fa-whatsapp"></i> اطلب الخدمة
                 </a>
@@ -1091,7 +1103,7 @@
                     <i class="fa-brands fa-whatsapp"></i> اطلب الخدمة
                 </a>
             </div>
-            <div class="service-card" data-aos="fade-up" data-aos-delay="480">
+            <div class="service-card" data-aos="fade-up" data-aos-delay="500">
                 <div class="service-icon"><i class="fa-solid fa-graduation-cap"></i></div>
                 <h3>استشارات ودروس تقنية</h3>
                 <p>استشارات برمجية متخصصة ودروس خصوصية في البرمجة والتحول الرقمي (أونلاين).</p>
@@ -1099,7 +1111,7 @@
                     <i class="fa-brands fa-whatsapp"></i> اطلب الخدمة
                 </a>
             </div>
-            <div class="service-card" data-aos="fade-up" data-aos-delay="560">
+            <div class="service-card" data-aos="fade-up" data-aos-delay="600">
                 <div class="service-icon"><i class="fa-brands fa-docker"></i></div>
                 <h3>Docker والنشر السحابي</h3>
                 <p>بناء حاويات Docker و Docker Compose، ونشر الأنظمة على أي بيئة أو سيرفر بسهولة واحترافية.</p>
@@ -1113,7 +1125,7 @@
     <!-- ========== Why Choose Me ========== -->
     <section id="why">
         <h2 class="section-title" data-aos="fade-up">لماذا <span>تختارني؟</span></h2>
-        <p class="section-subtitle" data-aos="fade-up">خبرة مؤسساتية، موبايل حديث، وتسليم منضبط</p>
+        <p class="section-subtitle" data-aos="fade-up">ما يميزني عن غيري في سوق تطوير البرمجيات</p>
         <div class="why-grid">
             <div class="why-card" data-aos="fade-up">
                 <i class="fa-solid fa-briefcase why-icon"></i>
@@ -1125,20 +1137,20 @@
                 <h3>موبايل و Firebase</h3>
                 <p>أبني تطبيقات Flutter مع Firestore و Auth و Cloud Functions، مع إدارة حالة واضحة وربط APIs — خبرة مكتسبة عبر عمل تعاوني حديث مع وكلاء Cursor.</p>
             </div>
-            <div class="why-card" data-aos="fade-up" data-aos-delay="160">
+            <div class="why-card" data-aos="fade-up" data-aos-delay="100">
                 <i class="fa-solid fa-layer-group why-icon"></i>
                 <h3>أنماط تصميم متقدمة</h3>
-                <p>أتقن تطبيق CQRS و MediatR و Repository Pattern لبناء أنظمة قابلة للتوسع والصيانة على المدى الطويل.</p>
+                <p>أتقن تطبيق CQRS, MediatR, Repository Pattern لبناء أنظمة قابلة للتوسع والصيانة على المدى الطويل.</p>
             </div>
-            <div class="why-card" data-aos="fade-up" data-aos-delay="240">
+            <div class="why-card" data-aos="fade-up" data-aos-delay="200">
                 <i class="fa-brands fa-docker why-icon"></i>
                 <h3>Docker والحاويات</h3>
-                <p>أتقن بناء وإدارة حاويات Docker و Docker Compose لضمان عمل الأنظمة بسلاسة على أي بيئة دون مشاكل توافق.</p>
+                <p>أتقن بناء وإدارة حاويات Docker و Docker Compose، لضمان عمل الأنظمة بسلاسة على أي بيئة أو سيرفر دون مشاكل توافق.</p>
             </div>
-            <div class="why-card" data-aos="fade-up" data-aos-delay="320">
+            <div class="why-card" data-aos="fade-up" data-aos-delay="300">
                 <i class="fa-solid fa-clock why-icon"></i>
                 <h3>تسليم في الوقت</h3>
-                <p>ألتزم بمواعيد التسليم وأقدم تحديثات دورية أثناء العمل لضمان رضاك في كل مرحلة.</p>
+                <p>ألتزم بمواعيد التسليم وأقدم تحديثات دورية أثناء العمل لضمان رضاك التام في كل مرحلة.</p>
             </div>
             <div class="why-card" data-aos="fade-up" data-aos-delay="400">
                 <i class="fa-solid fa-headset why-icon"></i>
@@ -1177,41 +1189,6 @@
         </div>
     </section>
 
-    <!-- ========== Tech Marquee ========== -->
-    <div class="tech-marquee" aria-hidden="true">
-        <div class="marquee-track">
-            <div class="marquee-item"><i class="fa-brands fa-microsoft"></i> .NET Core</div>
-            <div class="marquee-item"><i class="fa-brands fa-angular"></i> Angular</div>
-            <div class="marquee-item"><i class="fa-solid fa-mobile-screen"></i> Flutter</div>
-            <div class="marquee-item"><i class="fa-solid fa-fire"></i> Firebase</div>
-            <div class="marquee-item"><i class="fa-solid fa-database"></i> Firestore</div>
-            <div class="marquee-item"><i class="fa-solid fa-cloud"></i> Cloud Functions</div>
-            <div class="marquee-item"><i class="fa-solid fa-code"></i> C#</div>
-            <div class="marquee-item"><i class="fa-solid fa-code"></i> Dart</div>
-            <div class="marquee-item"><i class="fa-brands fa-python"></i> Python</div>
-            <div class="marquee-item"><i class="fa-solid fa-database"></i> SQL Server</div>
-            <div class="marquee-item"><i class="fa-solid fa-server"></i> PostgreSQL</div>
-            <div class="marquee-item"><i class="fa-brands fa-docker"></i> Docker</div>
-            <div class="marquee-item"><i class="fa-brands fa-js"></i> JavaScript</div>
-            <div class="marquee-item"><i class="fa-brands fa-git-alt"></i> Git</div>
-            <!-- duplicate for seamless loop -->
-            <div class="marquee-item"><i class="fa-brands fa-microsoft"></i> .NET Core</div>
-            <div class="marquee-item"><i class="fa-brands fa-angular"></i> Angular</div>
-            <div class="marquee-item"><i class="fa-solid fa-mobile-screen"></i> Flutter</div>
-            <div class="marquee-item"><i class="fa-solid fa-fire"></i> Firebase</div>
-            <div class="marquee-item"><i class="fa-solid fa-database"></i> Firestore</div>
-            <div class="marquee-item"><i class="fa-solid fa-cloud"></i> Cloud Functions</div>
-            <div class="marquee-item"><i class="fa-solid fa-code"></i> C#</div>
-            <div class="marquee-item"><i class="fa-solid fa-code"></i> Dart</div>
-            <div class="marquee-item"><i class="fa-brands fa-python"></i> Python</div>
-            <div class="marquee-item"><i class="fa-solid fa-database"></i> SQL Server</div>
-            <div class="marquee-item"><i class="fa-solid fa-server"></i> PostgreSQL</div>
-            <div class="marquee-item"><i class="fa-brands fa-docker"></i> Docker</div>
-            <div class="marquee-item"><i class="fa-brands fa-js"></i> JavaScript</div>
-            <div class="marquee-item"><i class="fa-brands fa-git-alt"></i> Git</div>
-        </div>
-    </div>
-
     <!-- ========== Experience ========== -->
     <section id="experience">
         <h2 class="section-title" data-aos="fade-up">الخبرات <span>المهنية</span></h2>
@@ -1221,20 +1198,15 @@
                 <h3>مهندس برمجيات</h3>
                 <p>دائرة هندسة البرمجيات - المؤسسة العامة للخطوط الحديدية السورية. تصميم وتطوير الأنظمة الأساسية، ونظام المراسلات (الديوان الإلكتروني)، وأرشفة العقارات.</p>
             </div>
-            <div class="card" data-aos="fade-up" data-aos-delay="80">
-                <h4>حديثاً</h4>
-                <h3>Flutter و Firebase</h3>
-                <p>تطوير تطبيقات موبايل متعددة المنصات وخدمات خلفية سحابية (Firestore، Authentication، Cloud Functions، إدارة الحالة، وواجهات API) بالتعاون مع وكلاء Cursor على مشاريع حديثة.</p>
-            </div>
-            <div class="card" data-aos="fade-up" data-aos-delay="160">
+            <div class="card" data-aos="fade-up" data-aos-delay="100">
                 <h4>مستقل</h4>
                 <h3>مطور تطبيقات</h3>
-                <p>تطوير وصيانة تطبيقات مخصصة للهواتف وسطح المكتب باستخدام .NET MAUI و Flutter. بناء أنظمة متكاملة بـ ASP.NET Core و Angular، مع Docker و Docker Compose للنشر السلس.</p>
+                <p>تطوير وصيانة تطبيقات مخصصة للهواتف الذكية وسطح المكتب باستخدام .NET MAUI و Flutter مع Firebase (Firestore، Auth، Cloud Functions، إدارة الحالة و APIs). بناء أنظمة متكاملة باستخدام ASP.NET Core و Angular، مع خبرة عملية في Docker و Docker Compose لضمان نشر سلس على أي بيئة أو سيرفر.</p>
             </div>
-            <div class="card" data-aos="fade-up" data-aos-delay="240">
+            <div class="card" data-aos="fade-up" data-aos-delay="200">
                 <h4>منذ 2018</h4>
                 <h3>أخصائي جمع وإدخال بيانات</h3>
-                <p>العمل مع فريق «رؤى» في جمع وإدخال البيانات وتحليلها، مما أكسبني خبرة في التعامل مع البيانات ودقتها.</p>
+                <p>العمل مع فريق "رؤى" في جمع وإدخال البيانات وتحليلها، مما أكسبني خبرة في التعامل مع البيانات الضخمة ودقتها.</p>
             </div>
         </div>
     </section>
@@ -1246,40 +1218,40 @@
             <div class="card" data-aos="fade-up">
                 <h3>المنصة الإلكترونية والموقع الرسمي</h3>
                 <h4>المؤسسة العامة للخطوط الحديدية</h4>
-                <p>بناء وتطوير الموقع الإلكتروني الرسمي ليكون الواجهة الرقمية الحديثة للمؤسسة، بما يعكس هويتها ويسهل الوصول لخدماتها.</p>
-                <a href="https://cfssyria.sy/" target="_blank" rel="noopener" class="project-link">
+                <p>بناء وتطوير الموقع الإلكتروني الرسمي والاحترافي ليكون الواجهة الرقمية الحديثة للمؤسسة، بما يعكس هويتها ويسهل الوصول لخدماتها.</p>
+                <a href="https://cfssyria.sy/" target="_blank" class="project-link">
                     زيارة الموقع <i class="fa-solid fa-arrow-up-right-from-square"></i>
                 </a>
             </div>
-            <div class="card" data-aos="fade-up" data-aos-delay="80">
+            <div class="card" data-aos="fade-up" data-aos-delay="100">
                 <h3>نظام ERP متكامل</h3>
                 <h4>التحول الرقمي للمؤسسة</h4>
-                <p>بناء نظام تخطيط موارد المؤسسات (ERP) لربط الأقسام والعمليات (المالية، الإدارية، الهندسية) في نظام مركزي واحد.</p>
+                <p>بناء نظام تخطيط موارد المؤسسات (ERP) لربط كافة الأقسام والعمليات (المالية، الإدارية، الهندسية) في نظام مركزي واحد.</p>
             </div>
-            <div class="card" data-aos="fade-up" data-aos-delay="160">
+            <div class="card" data-aos="fade-up" data-aos-delay="200">
                 <h3>نظام أرشفة العقارات</h3>
                 <h4>دائرة المساحة والاستملاك</h4>
-                <p>نظام متكامل وفق أنماط التصميم المتقدمة (Repository Pattern، CQRS، MediatR) لضمان قابلية التوسع والصيانة.</p>
+                <p>نظام متكامل تم بناؤه وفق أنماط التصميم المتقدمة (Repository Pattern, CQRS, MediatR) لضمان قابلية التوسع والصيانة.</p>
             </div>
-            <div class="card" data-aos="fade-up" data-aos-delay="240">
+            <div class="card" data-aos="fade-up" data-aos-delay="300">
                 <h3>الديوان الإلكتروني ونظام المراسلات</h3>
                 <h4>التحول الرقمي</h4>
-                <p>نظام لإدارة الأرشفة والمراسلات بهيكلية برمجية تعتمد على Service و Repository Pattern.</p>
+                <p>نظام لإدارة الأرشفة والمراسلات بهيكلية برمجية احترافية تعتمد على Service & Repository Pattern.</p>
             </div>
-            <div class="card" data-aos="fade-up" data-aos-delay="320">
+            <div class="card" data-aos="fade-up" data-aos-delay="400">
                 <h3>تتبع القاطرات</h3>
                 <h4>أنظمة هارد وير وسوفت وير</h4>
                 <p>تطوير نظام لتتبع القاطرات وإخراج تقارير كاملة، مع مسح ورسم خط السكة الحديدية إلكترونياً على الخريطة.</p>
             </div>
-            <div class="card" data-aos="fade-up" data-aos-delay="400">
+            <div class="card" data-aos="fade-up" data-aos-delay="450">
                 <h3>تطبيقات Flutter مع Firebase</h3>
                 <h4>عمل تعاوني مع وكلاء Cursor</h4>
                 <p>بناء تطبيقات موبايل وخدمات سحابية باستخدام Flutter و Firebase (Firestore، Auth، Cloud Functions) مع إدارة الحالة وواجهات API، ضمن أعمال تعاونية حديثة مع وكلاء Cursor.</p>
             </div>
-            <div class="card" data-aos="fade-up" data-aos-delay="480">
+            <div class="card" data-aos="fade-up" data-aos-delay="500">
                 <h3>تطبيقات الواقع المعزز (AR)</h3>
-                <h4>Unity &amp; .NET MAUI</h4>
-                <p>تطوير تطبيقات هواتف تعتمد على الواقع المعزز والمحاكاة ثلاثية الأبعاد، بما في ذلك محاكاة طيران الدرون.</p>
+                <h4>Unity & .NET MAUI</h4>
+                <p>تطوير تطبيقات هواتف ذكية تعتمد على الواقع المعزز والمحاكاة ثلاثية الأبعاد، بما في ذلك محاكاة طيران الدرون.</p>
             </div>
         </div>
     </section>
@@ -1292,7 +1264,7 @@
                 <div class="course-icon"><i class="fa-solid fa-laptop-code"></i></div>
                 <div class="course-info">
                     <h3>مطور ويب شامل (Full-Stack)</h3>
-                    <p>ASP.NET Core &amp; Angular</p>
+                    <p>ASP.NET Core & Angular</p>
                     <span class="course-badge">مبادرة 1000 مبرمج</span>
                 </div>
             </div>
@@ -1307,7 +1279,7 @@
             <div class="course-card" data-aos="fade-up" data-aos-delay="100">
                 <div class="course-icon"><i class="fa-brands fa-html5"></i></div>
                 <div class="course-info">
-                    <h3>بناء واجهات الويب (HTML &amp; CSS)</h3>
+                    <h3>بناء واجهات الويب (HTML & CSS)</h3>
                     <p>تطوير الواجهات الأمامية باحترافية</p>
                     <span class="course-badge">أكاديمية الزيرو</span>
                 </div>
@@ -1347,7 +1319,7 @@
             <div class="course-card" data-aos="fade-up" data-aos-delay="350">
                 <div class="course-icon"><i class="fa-solid fa-chart-line"></i></div>
                 <div class="course-info">
-                    <h3>المراقبة والتقييم (M&amp;E)</h3>
+                    <h3>المراقبة والتقييم (M&E)</h3>
                     <p>شهادة معتمدة في المراقبة والتقييم</p>
                     <span class="course-badge">منظمة بهار</span>
                 </div>
@@ -1374,13 +1346,13 @@
     <!-- ========== Contact ========== -->
     <section id="contact">
         <h2 class="section-title" data-aos="fade-up">تواصل <span>معي</span></h2>
-        <p class="section-subtitle" data-aos="fade-up">سأرد عليك في أقرب وقت. لا تتردد في التواصل لأي استفسار أو طلب خدمة.</p>
+        <p class="section-subtitle" data-aos="fade-up">سأرد عليك في أقرب وقت ممكن. لا تتردد في التواصل لأي استفسار أو طلب خدمة.</p>
         <div class="contact-container" data-aos="fade-up">
             <form class="contact-form" action="https://formsubmit.co/abdonedal911@gmail.com" method="POST">
                 <input type="hidden" name="_captcha" value="false">
                 <input type="hidden" name="_subject" value="رسالة جديدة من موقع البورتفوليو">
                 <input type="hidden" name="_template" value="table">
-
+                
                 <div class="form-row">
                     <div class="form-group">
                         <label for="name">الاسم الكامل</label>
@@ -1418,7 +1390,7 @@
                 </div>
                 <div class="contact-info-item">
                     <i class="fa-brands fa-whatsapp"></i>
-                    <a href="https://wa.me/963934915776" target="_blank" rel="noopener">واتساب مباشر</a>
+                    <a href="https://wa.me/963934915776" target="_blank">واتساب مباشر</a>
                 </div>
             </div>
         </div>
@@ -1429,25 +1401,33 @@
         <div class="social-links">
             <a href="mailto:abdonedal911@gmail.com" title="البريد الإلكتروني"><i class="fa-solid fa-envelope"></i></a>
             <a href="tel:+963934915776" title="الهاتف"><i class="fa-solid fa-phone"></i></a>
-            <a href="https://wa.me/963934915776" class="whatsapp-link" target="_blank" rel="noopener" title="واتساب"><i class="fa-brands fa-whatsapp"></i></a>
-            <a href="https://github.com/Abdulkareemnidal" target="_blank" rel="noopener" title="GitHub"><i class="fa-brands fa-github"></i></a>
+            <a href="https://wa.me/963934915776" class="whatsapp-link" target="_blank" title="واتساب"><i class="fa-brands fa-whatsapp"></i></a>
+            <a href="https://github.com/Abdulkareemnidal" target="_blank" title="GitHub"><i class="fa-brands fa-github"></i></a>
             <a href="#" title="LinkedIn"><i class="fa-brands fa-linkedin"></i></a>
         </div>
-        <p style="color: var(--text-muted);">© 2026 عبد الكريم عبد القادر. جميع الحقوق محفوظة.</p>
+        <p style="color: var(--text-muted);">© 2024 عبد الكريم عبد القادر. جميع الحقوق محفوظة.</p>
     </footer>
 
     <!-- ========== Floating Buttons ========== -->
-    <a href="https://wa.me/963934915776" class="whatsapp-float" target="_blank" rel="noopener" title="تواصل عبر واتساب">
+    <a href="https://wa.me/963934915776" class="whatsapp-float" target="_blank" title="تواصل عبر واتساب">
         <i class="fa-brands fa-whatsapp"></i>
     </a>
-    <button class="scroll-top" id="scrollTop" title="العودة للأعلى" aria-label="العودة للأعلى">
+    <button class="scroll-top" id="scrollTop" title="العودة للأعلى">
         <i class="fa-solid fa-arrow-up"></i>
     </button>
 
     <!-- ========== Scripts ========== -->
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
     <script>
-        AOS.init({ duration: 900, once: true, offset: 80 });
+        AOS.init({ duration: 1000, once: true, offset: 100 });
+
+        new Typed('#typed', {
+            strings: ['مطور ويب شامل (Full-Stack)', 'مهندس برمجيات', 'مطور Flutter & Firebase', 'مطور تطبيقات .NET', 'خبير CQRS & MediatR', 'Docker & Containerization'],
+            typeSpeed: 50,
+            backSpeed: 30,
+            loop: true
+        });
 
         // Theme Toggle
         const themeBtn = document.getElementById('themeBtn');
